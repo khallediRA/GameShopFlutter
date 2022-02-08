@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:desktop_test/model/game.dart';
+import 'package:desktop_test/providers/screen_theme_provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class GameCard extends StatefulWidget {
   final Game game;
@@ -34,6 +36,7 @@ class _GameCardState extends State<GameCard> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ScreenTheme>(context);
     final List<String> listOfavailablePlateforms = [
       "android",
       "commodore-amiga",
@@ -66,13 +69,17 @@ class _GameCardState extends State<GameCard> {
         onTap: () {},
         child: Container(
           decoration: BoxDecoration(
-            color: ThemeData.dark().scaffoldBackgroundColor,
+            color: theme.getTheme == ThemeBrightness.DARK
+                ? ThemeData.dark().scaffoldBackgroundColor
+                : Colors.white,
             boxShadow: [
               BoxShadow(
                   offset:
                       isHovered! ? const Offset(10, 11) : const Offset(6, 7),
                   blurRadius: 10,
-                  color: Colors.yellow)
+                  color: theme.getTheme == ThemeBrightness.DARK
+                      ? Colors.yellow
+                      : Colors.black)
             ],
           ),
           child: Column(
@@ -84,8 +91,8 @@ class _GameCardState extends State<GameCard> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
                   ),
                 ),
                 child: isHovered! && widget.game.short_screenshots!.isNotEmpty
@@ -156,7 +163,11 @@ class _GameCardState extends State<GameCard> {
                                   SvgPicture.asset(
                                       "assets/platforms/${e.platform!.slug!}.svg",
                                       height: 25,
-                                      width: 20),
+                                      width: 20,
+                                      color:
+                                          theme.getTheme == ThemeBrightness.DARK
+                                              ? Colors.white
+                                              : Colors.black),
                                   const SizedBox(
                                     width: 10,
                                   ),

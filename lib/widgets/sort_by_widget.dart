@@ -12,7 +12,7 @@ class _SortByWidgetState extends State<SortByWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Text("Sort By"),
+      const Text("Sort By"),
       PillButtonBar(
           selected: index,
           onChanged: (i) => {

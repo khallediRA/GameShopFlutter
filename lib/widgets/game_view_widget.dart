@@ -2,7 +2,6 @@ import 'package:desktop_test/model/game.dart';
 import 'package:desktop_test/widgets/game_card.dart';
 import 'package:desktop_test/widgets/shimmer_builder.dart';
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../providers/list_of_games.dart';
 
@@ -59,7 +58,7 @@ class _GameGridViewState extends State<GameGridView> {
                   ),
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return ShimmerBuilder();
+                    return const ShimmerBuilder();
                   },
                 ),
               ),

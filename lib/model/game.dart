@@ -127,14 +127,14 @@ class Game {
       'website': website,
       'description': description,
       'metacritic': metacritic,
-      'genres': genres?.map((x) => x?.toMap())?.toList(),
-      'platforms': platforms?.map((x) => x?.toMap())?.toList(),
-      'parent_platforms': parent_platforms?.map((x) => x?.toMap())?.toList(),
-      'publishers': publishers?.map((x) => x?.toMap())?.toList(),
-      'ratings': ratings?.map((x) => x?.toMap())?.toList(),
-      'screenshots': screenshots?.map((x) => x?.toMap())?.toList(),
-      'trailers': trailers?.map((x) => x?.toMap())?.toList(),
-      'short_screenshots': short_screenshots?.map((x) => x?.toMap())?.toList(),
+      'genres': genres?.map((x) => x.toMap()).toList(),
+      'platforms': platforms?.map((x) => x.toMap()).toList(),
+      'parent_platforms': parent_platforms?.map((x) => x.toMap()).toList(),
+      'publishers': publishers?.map((x) => x.toMap()).toList(),
+      'ratings': ratings?.map((x) => x.toMap()).toList(),
+      'screenshots': screenshots?.map((x) => x.toMap()).toList(),
+      'trailers': trailers?.map((x) => x.toMap()).toList(),
+      'short_screenshots': short_screenshots?.map((x) => x.toMap()).toList(),
     };
   }
 
