@@ -15,6 +15,12 @@ class GameGridView extends StatefulWidget {
 class _GameGridViewState extends State<GameGridView> {
   final ScrollController _controller = ScrollController();
   @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final gameService = ListOfGamesService();
     double screenWidth = MediaQuery.of(context).size.width;

@@ -50,6 +50,7 @@ class _GameCardState extends State<GameCard> {
       "web",
       "xbox"
     ];
+    double screenWidth = MediaQuery.of(context).size.width;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: ((event) {
@@ -87,7 +88,7 @@ class _GameCardState extends State<GameCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: 300,
+                height: screenWidth / 6.5,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(

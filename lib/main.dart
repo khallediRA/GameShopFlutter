@@ -60,6 +60,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool _checked = false;
   int _currentIndex = 0;
+  final ScrollController _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ScreenTheme>(context);
@@ -84,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         pane: NavigationPane(
+          scrollController: _scrollController,
           header: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: DefaultTextStyle(

@@ -10,8 +10,6 @@ class ShimmerBuilder extends StatelessWidget {
       baseColor: Colors.transparent,
       highlightColor: Colors.grey[100],
       child: Container(
-        height: 300,
-        width: 300,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 0.5),
           color: Colors.white,
