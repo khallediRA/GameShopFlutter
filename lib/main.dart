@@ -1,5 +1,6 @@
 import 'package:desktop_test/providers/screen_theme_provider.dart';
 import 'package:desktop_test/screens/All_games_screen.dart';
+import 'package:desktop_test/screens/details_screen.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -69,8 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Image(image: ExactAssetImage("assets/logo.png")),
           ),
           actions: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text("Activate Light Mode"),
+              Text("Light Mode"),
               ToggleSwitch(
                   checked: _checked,
                   onChanged: (v) {
@@ -97,12 +99,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           items: [
             PaneItem(
-              icon: const Icon(FluentIcons.a_t_p_logo),
-              title: const Text('Screen 1'),
+              icon: const Icon(FluentIcons.game),
+              title: const Text('All Games'),
             ),
             PaneItem(
-              icon: const Icon(FluentIcons.text_box),
-              title: const Text('Screen 2'),
+              icon: const Icon(FluentIcons.chart),
+              title: const Text('Top Rated'),
             ),
           ],
           selected: _currentIndex,
@@ -114,8 +116,8 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
         content: NavigationBody(
-          index: 0,
-          children: const [AllGamesScreen()],
+          index: _currentIndex,
+          children: const [AllGamesScreen(), TopRatedScreen()],
         ));
   }
 }

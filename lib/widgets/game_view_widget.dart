@@ -24,7 +24,7 @@ class _GameGridViewState extends State<GameGridView> {
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             List<Game> listOfGames = snapshot.data;
-            return Expanded(
+            return Flexible(
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(

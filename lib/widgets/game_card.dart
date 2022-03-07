@@ -160,14 +160,17 @@ class _GameCardState extends State<GameCard> {
                                 .contains(e.platform!.slug!)) {
                               return Row(
                                 children: [
-                                  SvgPicture.asset(
-                                      "assets/platforms/${e.platform!.slug!}.svg",
-                                      height: 25,
-                                      width: 20,
-                                      color:
-                                          theme.getTheme == ThemeBrightness.DARK
-                                              ? Colors.white
-                                              : Colors.black),
+                                  Tooltip(
+                                    message: e.platform!.name,
+                                    child: SvgPicture.asset(
+                                        "assets/platforms/${e.platform!.slug!}.svg",
+                                        height: 25,
+                                        width: 20,
+                                        color: theme.getTheme ==
+                                                ThemeBrightness.DARK
+                                            ? Colors.white
+                                            : Colors.black),
+                                  ),
                                   const SizedBox(
                                     width: 10,
                                   ),
